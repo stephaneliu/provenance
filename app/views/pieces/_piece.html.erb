@@ -1,6 +1,17 @@
 <% show = local_assigns[:show] || false -%>
 <li id="<%= dom_id piece %>" class="flex justify-between gap-x-6 py-5">
   <div class="flex shrink-0 items-center gap-x-6">
+    <div class="flex min-w-0 gap-x-4">
+      <img class="h-12 w-12 flex-none rounded-full bg-gray-50" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+      <div class="min-w-0 flex-auto">
+        <p class="text-sm font-semibold leading-6 text-gray-900">
+          <%= piece.name %>
+        </p>
+        <p class="mt-1 flex text-xs leading-5 text-gray-500">
+          <%= piece.description %>
+        </p>
+      </div>
+    </div>
     <% if show %>
       <div class="relative flex-none" data-controller="toggle">
         <button type="button" class="-m-2.5 block p-2.5 text-gray-500 hover:text-gray-900" id="options-menu-0-button" aria-expanded="false" aria-haspopup="true" data-action="click->toggle#toggle touch->toggle#toggle">
@@ -23,19 +34,10 @@
         <div class="hidden absolute right-0 z-10 mt-2 w-32 origin-top-right rounded-md bg-white py-2 shadow-lg ring-1 ring-gray-900/5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="options-menu-0-button" tabindex="-1" data-toggle-target="toggleable">
           <!-- Active: "bg-gray-50", Not Active: "" -->
           <%= link_to "Details", piece, class: "block px-3 py-1 text-sm leading-6 text-gray-900 hover:bg-gray-100" %>
+          <%= link_to "Edit", edit_piece_path(piece), class: "block px-3 py-1 text-sm leading-6 text-gray-900 hover:bg-gray-100" %>
+          <%= button_to "Delete", piece, method: :delete, class: "block px-3 py-1 text-sm leading-6 text-gray-900 hover:bg-gray-100" %>
         </div>
       </div>
     <% end %>
-    <div class="flex min-w-0 gap-x-4">
-      <img class="h-12 w-12 flex-none rounded-full bg-gray-50" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
-      <div class="min-w-0 flex-auto">
-        <p class="text-sm font-semibold leading-6 text-gray-900">
-          <%= piece.name %>
-        </p>
-        <p class="mt-1 flex text-xs leading-5 text-gray-500">
-          <%= piece.description %>
-        </p>
-      </div>
-    </div>
   </div>
 </li>
