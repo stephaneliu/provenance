@@ -4,10 +4,9 @@
 
 <div id="pieces">
   <% @pieces.each do |piece| %>
-    <%= render piece %>
-    <p>
-      <%= link_to "Show this piece", piece %>
-    </p>
+    <ul role="list" class="divide-y divide-gray-100">
+      <%= render piece, show: true %>
+    </ul>
   <% end %>
 </div>
 
