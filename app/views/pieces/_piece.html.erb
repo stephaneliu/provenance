@@ -7,7 +7,7 @@
         <p class="text-sm font-semibold leading-6 text-gray-900">
           <%= piece.name %>
         </p>
-        <p class="mt-1 flex text-xs leading-5 text-gray-500">
+        <p class="mt-1 flex text-sm leading-5 text-gray-500">
           <%= piece.description %>
         </p>
       </div>
@@ -20,21 +20,10 @@
             <path d="M10 3a1.5 1.5 0 110 3 1.5 1.5 0 010-3zM10 8.5a1.5 1.5 0 110 3 1.5 1.5 0 010-3zM11.5 15.5a1.5 1.5 0 10-3 0 1.5 1.5 0 003 0z" />
           </svg>
         </button>
-
-        <!--
-          Dropdown menu, show/hide based on menu state.
-
-          Entering: "transition ease-out duration-100"
-            From: "transform opacity-0 scale-95"
-            To: "transform opacity-100 scale-100"
-          Leaving: "transition ease-in duration-75"
-            From: "transform opacity-100 scale-100"
-            To: "transform opacity-0 scale-95"
-        -->
         <div class="hidden absolute right-0 z-10 mt-2 w-32 origin-top-right rounded-md bg-white py-2 shadow-lg ring-1 ring-gray-900/5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="options-menu-0-button" tabindex="-1" data-toggle-target="toggleable">
           <!-- Active: "bg-gray-50", Not Active: "" -->
-          <%= link_to "Details", piece, class: "block px-3 py-1 text-sm leading-6 text-gray-900 hover:bg-gray-100" %>
-          <%= link_to "Edit", edit_piece_path(piece), class: "block px-3 py-1 text-sm leading-6 text-gray-900 hover:bg-gray-100" %>
+          <%= link_to "Details", piece, class: "block px-3 py-1 text-sm leading-6 no-underline text-gray-900 hover:bg-gray-100" %>
+          <%= link_to "Edit", edit_piece_path(piece), class: "block px-3 py-1 text-sm leading-6 no-underline text-gray-900 hover:bg-gray-100" %>
           <%= button_to "Delete", piece, method: :delete, class: "block px-3 py-1 text-sm leading-6 text-gray-900 hover:bg-gray-100" %>
         </div>
       </div>

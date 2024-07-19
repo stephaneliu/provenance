@@ -1,6 +1,6 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Pieces</h1>
+<h1 class="text-xl font-semibold text-green-600">Pieces</h1>
 
 <div id="pieces">
   <% @pieces.each do |piece| %>
@@ -10,4 +10,4 @@
   <% end %>
 </div>
 
-<%= link_to "New piece", new_piece_path %>
+<%= link_to "New piece", new_piece_path, class: "no-underline" %>
