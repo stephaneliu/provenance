@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="h-full bg-gray-100">
   <head>
     <title>Provenance</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -11,9 +11,13 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-    <main class="prose container mx-auto mt-28 px-5">
-      <%= yield %>
-    </main>
+  <body class="h-full">
+    <div class="min-h-full">
+      <%= render "shared/navbar" %>
+      <main class="-mt-24 pb-8">
+        <%= yield %>
+      </main>
+      <%= render "shared/footer" %>
+    </div>
   </body>
 </html>
