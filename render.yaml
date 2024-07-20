@@ -1,6 +1,6 @@
 databases:
   - name: pg_provenance
-    databaseName: pg_provenance
+    databaseName: provenance
     user: pg_provenance
     plan: free
 
